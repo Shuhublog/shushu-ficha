@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ficha SHUSHU</title>
-
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#fdeef3;display:flex;justify-content:center;padding:20px}
 .shu-card{background:#fff;max-width:420px;width:100%;border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
@@ -17,32 +16,22 @@ body{margin:0;font-family:Arial,sans-serif;background:#fdeef3;display:flex;justi
 .shu-status{margin-top:14px;font-size:12px;color:#7a4a3b}
 </style>
 </head>
-
 <body>
-
 <div class="shu-card">
   <div class="shu-title">Ficha SHUSHU</div>
-
   <div class="shu-row"><strong>Dueño:</strong> <span id="nombreD">—</span></div>
   <div class="shu-row"><strong>Correo:</strong> <span id="correo">—</span></div>
   <div class="shu-row"><strong>Mascota:</strong> <span id="nombreM">—</span></div>
   <div class="shu-row"><strong>Teléfono:</strong> <span id="telefono">—</span></div>
-
-  <div class="shu-section">
-    <strong>Descripción:</strong>
+  <div class="shu-section"><strong>Descripción:</strong>
     <div class="shu-desc" id="descripcion">—</div>
   </div>
-
-  <div class="shu-section">
-    <strong>Foto del perro:</strong>
+  <div class="shu-section"><strong>Foto del perro:</strong>
     <img id="foto" class="shu-img" src="" alt="Foto perro">
   </div>
-
-  <div class="shu-section">
-    <strong>Certificado:</strong>
+  <div class="shu-section"><strong>Certificado:</strong>
     <img id="certificado" class="shu-img" src="" alt="Certificado">
   </div>
-
   <div class="shu-status" id="estado">Estado: cargando…</div>
 </div>
 
@@ -68,7 +57,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#fdeef3;display:flex;justi
       headers: { "X-Master-Key": "$2a$10$Z8yhv5acGXY4MTyDFrxUM.zEBn3BlkQ9cK6X/GbM2TKFQCurq.qwy" }
     });
     if(!res.ok){
-      estado.textContent = "Error al leer datos de JSONBin";
+      estado.textContent = "Error al leer datos de JSONBin ("+res.status+")";
       return;
     }
     const data = await res.json();
@@ -89,6 +78,5 @@ body{margin:0;font-family:Arial,sans-serif;background:#fdeef3;display:flex;justi
   }
 })();
 </script>
-
 </body>
 </html>
